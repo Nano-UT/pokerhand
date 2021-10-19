@@ -189,9 +189,11 @@
         if (thisPlayer.strength > winningHand[0]) {
           winner = i+1;
           winningHand = [thisPlayer.strength,thisPlayer.handNumbers];
+          ifchop = false;
         }else if (thisPlayer.strength == winningHand[0] && whichCard(thisPlayer.handNumbers, winningHand[1]) == 1) {
           winner = i+1;
           winningHand = [thisPlayer.strength,thisPlayer.handNumbers];
+          ifchop = false;
         }else if (thisPlayer.strength == winningHand[0] && whichCard(thisPlayer.handNumbers, winningHand[1]) == 0) {
           ifchop = true;
         }
@@ -214,7 +216,7 @@
         for (var i = 0; i < pNum; i++){
           var element = document.getElementById('Player' + (i+1));
           element.onclick = function() {
-            alert("不正解！");
+            alert("不正解！\nチョップです");
             var scoreElement = document.getElementById("score");
             scoreElement.textContent = 0;
             startGame();
@@ -239,7 +241,7 @@
             }
           }else{
               element.onclick = function() {
-                alert("不正解！");
+                alert("不正解！\nPlayer"+winner+"の勝ち");
                 var scoreElement = document.getElementById("score");
                 scoreElement.textContent = 0;
                 startGame();
@@ -248,7 +250,7 @@
         }
         var element = document.getElementById("chop");
         element.onclick = function() {
-            alert("不正解！");
+            alert("不正解！\nPlayer"+winner+"の勝ち");
             var scoreElement = document.getElementById("score");
             scoreElement.textContent = 0;
             startGame();
@@ -285,7 +287,6 @@
     function deal(num){
         var playerHand = document.getElementById('Player' + num);
         var playerWIN = document.getElementById('WIN' + num);
-
     }
 
   })();
