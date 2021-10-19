@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    .slot {
+      float: left;
+      width: 150px;
+      text-align: center;
+      font-size: 40px;
+    }
+    .player{
+      float: left;
+      width: 230px;
+      text-align: center;
+      margin: 5px;
+     }
+     .after{
+      clear:both;
+     }
+  </style>
+</head>
+
+
+<body>
+  <h1>Texas Hold'em 役判定練習</h1>
+  <p>連続正解数:<span id="score">0</span></p>
+  <form name="form1">
+  <p>プレイヤー人数：
+  <select name="playerNumber">
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  </select>
+  <input type="button" value="START" id="start">
+  </p>
+  </form>
+  ボード：
+  <div class="community">
+    <div id="com"></div>
+
+  </div>
+  <div class="player">
+      <div id="player1"></div>
+      <input type="hidden" value="WIN" id="WIN1">
+  </div>
+
+  <script src="index.js"></script>
+</body>
