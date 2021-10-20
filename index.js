@@ -200,18 +200,27 @@
 
         var playerHandDisplay = document.createTextNode(cardDisplay(playerHand));
         element = document.createElement("button");
+        element.style.height = '35px';
+        element.innerText = "Chop";
+        element.style.fontSize = '20px';
         element.id = "Player" + (i+1);
         element.innerText = "Player" + (i+1);
         playerDiv.appendChild(element);
         playerDiv.appendChild(playerHandDisplayPicture);
         newDiv.appendChild(playerDiv);
       }
+      var chopDiv = document.createElement("div");
       element = document.createElement("button");
+      element.style.height = '35px';
       element.innerText = "Chop";
-      element.id = "chop";
+      element.style.fontSize = '20px';
 
-      newDiv.appendChild(element);
+      element.id = "chop";
+      chopDiv.className = "chop after";
+      chopDiv.appendChild(element);
+
       community.appendChild(newDiv);
+      community.appendChild(chopDiv);
       if (ifchop) {
         for (var i = 0; i < pNum; i++){
           var element = document.getElementById('Player' + (i+1));
