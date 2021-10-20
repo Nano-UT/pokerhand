@@ -177,6 +177,7 @@
       var ifchop = false;
       var winningHand = [0,[0,0,0,0,0]];
       var newDiv = document.createElement("div");
+      newDiv.className = "image-vw";
       for (var i = 0; i < pNum; i++) {
         var playerDiv = document.createElement("div");
         playerDiv.className = 'player';
